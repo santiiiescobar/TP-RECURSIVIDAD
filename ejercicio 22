@@ -1,0 +1,12 @@
+def usar_la_fuerza(mochila, objetos_sacados=0):
+    if len(mochila) == 0:  
+        return objetos_sacados
+    else:
+        objeto = mochila.pop(0)  
+        if objeto == "sable de luz":  
+            return objetos_sacados + 1
+        else:  
+            return usar_la_fuerza(mochila, objetos_sacados + 1)
+mochila = ["botella de agua", "raciones de comida", "sable de luz", "comunicador"]
+objetos_necesarios = usar_la_fuerza(mochila)
+print(f"Se necesitaron {objetos_necesarios} objetos para encontrar el sable de luz.")
